@@ -1,0 +1,21 @@
+[
+  {
+    "name":      "phpcon2017",
+    "essential": true,
+    "image":     "${image}",
+    "memory":    ${php_mem},
+    "portMappings": [
+      {
+        "hostPort": 0,
+        "containerPort": 80
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group":  "${container}/container",
+        "awslogs-region": "${region}"
+      }
+    }
+  }
+]
